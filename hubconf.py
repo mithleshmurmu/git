@@ -65,6 +65,15 @@ def create_dataloaders(training_data, test_data, batch_size=64):
         break
         
     return train_dataloader, test_dataloader
+
+#############################
+
+def get_model():
+    
+    model = NeuralNetwork().to(device)
+
+    return model
+
     
 optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
 
@@ -87,13 +96,6 @@ classes = [
 
 
   
-#############################
-
-def get_model():
-    
-    model = NeuralNetwork().to(device)
-
-    return model
 
 
 def _train(dataloader, model, loss_fn=loss_fn, optimizer=optimizer):
