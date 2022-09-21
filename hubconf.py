@@ -29,25 +29,7 @@ class NeuralNetwork(nn.Module):
         logits = self.linear_relu_stack(x)
         return logits
     
-    
-optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
-
-classes = [
-    "T-shirt/top",
-    "Trouser",
-    "Pullover",
-    "Dress",
-    "Coat",
-    "Sandal",
-    "Shirt",
-    "Sneaker",
-    "Bag",
-    "Ankle boot",
-]
-
-
-
-#############################
+    #############################
 
 def load_data():
 
@@ -68,6 +50,25 @@ def load_data():
     )
     
     return training_data, test_data
+    
+optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
+
+classes = [
+    "T-shirt/top",
+    "Trouser",
+    "Pullover",
+    "Dress",
+    "Coat",
+    "Sandal",
+    "Shirt",
+    "Sneaker",
+    "Bag",
+    "Ankle boot",
+]
+
+
+
+
 
 #############################
 
