@@ -9,6 +9,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Using {device} device")
 
 loss_fn = nn.CrossEntropyLoss()
+optimizer = torch.optim.SGD(get_model().parameters(), lr=1e-3)
 
 
 # Define model
@@ -76,7 +77,7 @@ def get_model():
 
 #################################
 
-optimizer = torch.optim.SGD(get_model().parameters(), lr=1e-3)
+
 
 ####################################
 
