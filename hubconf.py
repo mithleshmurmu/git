@@ -76,6 +76,10 @@ def get_model():
 
 #################################
 
+optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
+
+####################################
+
 def _train(dataloader, model, loss_fn=loss_fn, optimizer=optimizer):
     size = len(dataloader.dataset)
     model.train()
@@ -96,7 +100,7 @@ def _train(dataloader, model, loss_fn=loss_fn, optimizer=optimizer):
             print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
 
     
-optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
+
 
 classes = [
     "T-shirt/top",
