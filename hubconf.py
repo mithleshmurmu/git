@@ -77,7 +77,7 @@ def get_model():
 
 #################################
 
-optimizer = torch.optim.SGD(getmodel().parameters(), lr=1e-3)
+optimizer = torch.optim.SGD(get_model().parameters(), lr=1e-3)
 
 ####################################
 
