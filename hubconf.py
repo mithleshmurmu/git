@@ -8,8 +8,15 @@ from torchvision.transforms import ToTensor
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Using {device} device")
 
+
+def get_model():
+    
+    model = NeuralNetwork().to(device)
+
+    return model
+
 loss_fn = nn.CrossEntropyLoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
+optimizer = torch.optim.SGD(get_model.parameters(), lr=1e-3)
 
 classes = [
     "T-shirt/top",
@@ -81,11 +88,7 @@ def create_dataloaders(training_data, test_data, batch_size=64):
   
 #############################
 
-def get_model():
-    
-    model = NeuralNetwork().to(device)
 
-    return model
 
 
 def _train(dataloader, model, loss_fn=loss_fn, optimizer=optimizer):
