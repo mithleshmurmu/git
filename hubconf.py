@@ -91,8 +91,8 @@ def get_model():
 
 #########################
 #def get_lossfn_and_optimizer():
-  loss_fn = nn.CrossEntropyLoss()
-  optimizer = torch.optim.SGD(get_model().parameters(), lr=1e-3)
+loss_fn = nn.CrossEntropyLoss()
+optimizer = torch.optim.SGD(get_model().parameters(), lr=1e-3)
 
 ################################################
 
