@@ -16,7 +16,7 @@ def get_model():
     return model
 
 loss_fn = nn.CrossEntropyLoss()
-optimizer = torch.optim.SGD(get_model.parameters(), lr=1e-3)
+optimizer = torch.optim.SGD(get_model().parameters(), lr=1e-3)
 
 classes = [
     "T-shirt/top",
